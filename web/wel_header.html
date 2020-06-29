@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<script type="text/javascript">
+
+var slideimages = new Array() // create new array to preload images
+slideimages[0] = new Image() // create new instance of image object
+slideimages[0].src = "image/curr 1.jpg" // set image src property to image path, preloading image in the process
+slideimages[1] = new Image()
+slideimages[1].src = "image/curr 2.jpg"
+slideimages[2] = new Image()
+slideimages[2].src = "image/curr3.jpg";
+slideimages[3]=new Image();
+slideimages[3].src="image/curr 4.jpg";
+slideimages[4]=new Image();
+slideimages[4].src="image/cuur 5.jpg";
+slideimages[5]=new Image();
+slideimages[5].src="image/hpg_SA_31032015.jpg";
+</script>
+</head>
+<body>
+<div style="width:30%;float:left">
+ <img src="logo_img.jpg" width="250" height="250"/>
+</div>
+<div style="width:70%;float:right">
+<img src="firstcar.gif" id="slide" style="width:100%;height:200px" />
+<script type="text/javascript">
+
+//variable that will increment through the images
+var step=0
+
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return
+ document.getElementById('slide').src = slideimages[step].src
+ if (step<2)
+  step++
+ else
+  step=0
+ //call function "slideit()" every 2.5 seconds
+ setTimeout("slideit()",1500)
+}
+
+slideit()
+
+</script>
+</div>
+</body>
